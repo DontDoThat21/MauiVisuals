@@ -1,3 +1,4 @@
+
 # Mesmerize - Visual Effects Showcase App
 
 A visually impressive .NET MAUI Android application that showcases three distinct animated effects with smooth transitions between them.
@@ -167,6 +168,10 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - **Customization UI**: User controls for effect parameters
 - **iOS Support**: Extend to iOS platform
 - **Desktop Support**: Windows/macOS versions
+
+
+
+
 
 ## 🔗 Resources
 
