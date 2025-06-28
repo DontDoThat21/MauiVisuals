@@ -1,3 +1,5 @@
+Mesmerize app.
+
 .NET MAUI Android app with the three effects you've described. Let me start with the GitHub issue details and then provide the implementation.
 GitHub Issue Title:
 [Feature] Implement Visual Effects Showcase App with Matrix Rain, Recursive Universe, and Butterfly Chaos Effects
