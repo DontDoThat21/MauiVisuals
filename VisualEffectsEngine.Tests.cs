@@ -81,7 +81,8 @@ namespace VisualEffectsApp.Tests
             var canvas = surface.Canvas;
             
             // Act & Assert - should not throw
-            Assert.DoesNotThrow(() => engine.RenderFrame(canvas, imageInfo));
+            var exception = Record.Exception(() => engine.RenderFrame(canvas, imageInfo));
+            Assert.Null(exception);
         }
     }
 }
