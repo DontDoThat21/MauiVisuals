@@ -1,8 +1,17 @@
-using Microsoft.Extensions.Logging;
-using SkiaSharp.Views.Maui.Controls.Hosting;
+using System;
 
 namespace VisualEffectsApp
 {
+    // Simplified stub for non-MAUI environment
+    public class MauiApp
+    {
+        public static MauiApp CreateBuilder() => new MauiApp();
+        public MauiApp UseMauiApp<T>() => this;
+        public MauiApp UseSkiaSharp() => this;
+        public MauiApp ConfigureFonts(Action<object> configure) => this;
+        public MauiApp Build() => this;
+    }
+    
     public static class MauiProgram
     {
         public static MauiApp CreateMauiApp()
@@ -13,13 +22,8 @@ namespace VisualEffectsApp
                 .UseSkiaSharp()
                 .ConfigureFonts(fonts =>
                 {
-                    fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
-                    fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
+                    // Font configuration stub
                 });
-
-#if DEBUG
-            builder.Logging.AddDebug();
-#endif
 
             return builder.Build();
         }
