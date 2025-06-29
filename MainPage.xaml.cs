@@ -1,39 +1,27 @@
-using SkiaSharp;
-using System;
+using SkiaSharp.Views.Maui;
+using SkiaSharp.Views.Maui.Controls;
 using VisualEffectsApp.Core;
 
-namespace VisualEffectsApp
+namespace VisualEffectsApp;
+
+public partial class MainPage : ContentPage
 {
-    // Simplified stub for non-MAUI environment 
-    public class ContentPage
-    {
-    }
+    private VisualEffectsEngine visualEngine;
     
-    public class SKPaintSurfaceEventArgs : EventArgs
+    public MainPage()
     {
-        public SKSurface Surface { get; set; }
-        public SKImageInfo Info { get; set; }
+        InitializeComponent();
+        visualEngine = new VisualEffectsEngine();
     }
-    
-    public partial class MainPage : ContentPage
+
+    private void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
     {
-        private VisualEffectsEngine visualEngine;
-        
-        public MainPage()
-        {
-            // Simplified initialization without MAUI dependencies
-            visualEngine = new VisualEffectsEngine();
-        }
+        visualEngine.RenderFrame(args.Surface.Canvas, args.Info);
+    }
 
-        private void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
-        {
-            visualEngine.RenderFrame(args.Surface.Canvas, args.Info);
-        }
-
-        private void OnCanvasTapped(object sender, EventArgs e)
-        {
-            // Cycle to next effect
-            visualEngine.SwitchToNextEffect();
-        }
+    private void OnCanvasTapped(object sender, EventArgs e)
+    {
+        // Cycle to next effect
+        visualEngine.SwitchToNextEffect();
     }
 }

@@ -1,19 +1,11 @@
-using System;
+namespace VisualEffectsApp;
 
-namespace VisualEffectsApp
+public partial class App : Application
 {
-    // Simplified stub for non-MAUI environment
-    public class Application
+    public App()
     {
-        public object MainPage { get; set; }
-    }
-    
-    public partial class App : Application
-    {
-        public App()
-        {
-            // Simplified initialization without MAUI dependencies
-            MainPage = new MainPage();
-        }
+        InitializeComponent();
+
+        MainPage = new AppShell();
     }
 }
